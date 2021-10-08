@@ -1,0 +1,62 @@
+import { React, useState } from "react";
+import { useEffect } from "react/cjs/react.development";
+import Grid from "./grid";
+
+const SearchField = () => {
+    // Hooks
+    const [search, setSearch] = useState('');
+    const [searchData, setSearchData] = useState([]);
+    const [result, setResult] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+
+    // Fetch API data
+    useEffect(() => {
+        fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a")
+            .then((data) => data.json())
+            .then(data => {
+                setResult([...data.drinks]);
+                setLoading(false);
+            })
+            .catch(error => console.log(error));
+
+    }, []);
+
+    // Form Submit Handler Function
+    const submitHandler = (e) => {
+        e.preventDefault();
+        console.log(search);
+
+        // Fetch Search Data
+        fetch(`www.thecocktaildb.com/api/json/v1/1/search.php?s=${search}`)
+            .then((data) => data.json())
+            .then(data => console.log(data))
+            .catch(error => console.log(error));
+
+        console.log(searchData);
+    }
+
+    return <>
+        {/* TextField */}
+        <form onSubmit={submitHandler}>
+            <input type="text"
+                value={search}
+                name="search" id="search"
+                className="searchInput" autoComplete="off"
+                autoFocus={true} placeholder="Search"
+                onChange={(e) => setSearch(e.target.value)}
+            />
+            <button type="submit">Search</button>
+        </form>
+
+        {/* Grid */}
+        <section className="grid">
+            {loading && <h1>Loading...</h1>}
+            {searchData == null ? <Grid Data={searchData} /> : <Grid Data={result} />}
+
+        </section>
+
+    </>
+};
+
+export default SearchField;

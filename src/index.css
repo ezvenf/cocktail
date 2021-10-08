@@ -1,13 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+*:focus::placeholder { opacity: 0; } /* Modern Browsers */
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-color: #FEF9EF;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.search {
+    text-align: center;
+}
+.searchInput {
+    text-align: center;
+    width:50%;
+    padding: 14px;
+    border-radius: 40px;
+    border:1px solid black;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;   
+    box-shadow: 2px 5px rgba(0, 0, 0, 0.1);     
+  
+}
+
+form > button {
+    padding: 12px;
+    border-radius: 18px;
+    margin-left: 10px;
+    background-color: #FFEFBC;
+    box-shadow: 2px 5px rgba(0, 0, 0, 0.1);  
+    
+    color: black;
+}
+
+form > button:hover {
+    background-color: #FFFEB7;
+}
+
+.grid {
+    margin-top: 50px;
+}
+.card-address {
+    text-decoration: none;
+    color: black;
+}
+
+.row > div {
+    margin-bottom: 20px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 10px;
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+  }
+
+.card-title {
+    padding-top: 10px;
+    /* float: left; */
+    /* text-align: left; */
+}
+
+
+.card > img {
+    /* width: 100%; */
+    border-radius: 5px 5px 0 0;
 }
