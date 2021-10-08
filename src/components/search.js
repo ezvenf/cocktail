@@ -28,9 +28,9 @@ const SearchField = () => {
         console.log(search);
 
         // Fetch Search Data
-        fetch(`www.thecocktaildb.com/api/json/v1/1/search.php?s=${search}`)
+        fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${search}`)
             .then((data) => data.json())
-            .then(data => console.log(data))
+            .then(data => setSearchData([...data.drinks]))
             .catch(error => console.log(error));
 
         console.log(searchData);
@@ -52,7 +52,7 @@ const SearchField = () => {
         {/* Grid */}
         <section className="grid">
             {loading && <h1>Loading...</h1>}
-            {searchData == null ? <Grid Data={searchData} /> : <Grid Data={result} />}
+            {searchData.length > 0 ? <Grid Data={searchData} /> : <Grid Data={result} />}
 
         </section>
 

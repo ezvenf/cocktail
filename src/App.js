@@ -8,7 +8,7 @@ const App = () => {
   }, []);
 
   return <div className="search">
-    <h1>Cocktail</h1>
+    <a href="/"><h1>Cocktail</h1></a>
     <SearchField />
   </div>;
 }
