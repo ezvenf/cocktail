@@ -12,6 +12,7 @@ const SearchField = () => {
 
     // Fetch API data
     useEffect(() => {
+        setSearchData([]);
         fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a")
             .then((data) => data.json())
             .then(data => {
