@@ -15,7 +15,7 @@ const Card = ({ Data }) => {
         return ingredients;
     }
 
-    return <div className="card">
+    return <div className="card hover">
 
         <img className="card-img-top"
             src={Data.strDrinkThumb} alt={Data.strDrink} />

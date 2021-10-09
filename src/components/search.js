@@ -38,8 +38,9 @@ const SearchField = () => {
     }
 
     return <>
+        <a href="#"><h1 className="text-center" onClick={() => window.location.reload()}>Cocktail</h1></a>
         {/* TextField */}
-        <form onSubmit={submitHandler}>
+        <form onSubmit={submitHandler} className="text-center">
             <input type="text"
                 value={search}
                 name="search" id="search"
@@ -54,7 +55,6 @@ const SearchField = () => {
         <section className="grid">
             {loading && <h1>Loading...</h1>}
             {searchData.length > 0 ? <Grid Data={searchData} /> : <Grid Data={result} />}
-
         </section>
 
     </>
