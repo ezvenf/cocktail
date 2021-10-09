@@ -9,7 +9,7 @@ const App = () => {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/">
       <div className="search">
         <Link to="/"><h1>Cocktail</h1></Link>
         <Switch>
